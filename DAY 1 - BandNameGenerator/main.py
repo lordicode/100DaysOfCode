@@ -7,3 +7,5 @@ print("Let's ease the job for you!")
 city_name = input("What city you grew up in? ->\n")
 pet_name = input("Name of your pet? ->\n")
 print("Your cool new band name is: \n" + city_name + " " + pet_name)
+
+
