@@ -1,5 +1,5 @@
 def ascii_sign(index):
-    signs = [""""MMMMWWMMMMMMMWXOdc;;;:xNMMWNk;';clc:;;,,,,,,,,,;;;:clod0WMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+    signs = ["""MMMMWWMMMMMMMWXOdc;;;:xNMMWNk;';clc:;;,,,,,,,,,;;;:clod0WMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
 MMMMWWMMMMMMMMMMWKko:;lOKOdc,'.'',,,,;;;;;;;;;;;;,,,,,'cO0000KNWMMMMMMMWNXXNNWMMMMMMMMMMMMM
 MMMWXXWMMMMMMMMMMWWXx:,,,''',;;;;;;::::::::::::::::::;;;;;,,,,:oOXWWMWXOxk0KNWWMMMMMMMMMMMM
 MMMMWNWMMMMMMMMMWN0x:'.',,;;;;:::::::::::::::::::::::::::::;;,,'';oOXKO0KNWWMMMMMMMMMMMMMMM
@@ -573,7 +573,47 @@ MMMMMMMMMMMMMMMMMMWN0xolloodddddddddddddddddddddddddddddddddddddoollox0NWMMMMMMM
 MMMMMMMMMMMMMMMMMMMMMWN0xolllooddddddddddddddddddddddddddddooolclox0NWMMMMMMMMMMMMMMMMMMMMMMMM
 MMMMMMMMMMMMMMMMMMMMMMMMWNKOxdolllloooodddddddddddddoooollllodxOKNWMMMMMMMMMMMMMMMMMMMMMMMMMMM
 MMMMMMMMMMMMMMMMMMMMMMMMMMMMWWNKOkxddoolllllllllllllooddxkOKNWWMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
-MMMMMMMMMMMMMMMWWNNWWWWMMMMMMMMMMMWWWNXKK0000000000KXNWWWMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM"""
+MMMMMMMMMMMMMMMWWNNWWWWMMMMMMMMMMMWWWNXKK0000000000KXNWWWMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM""", """MMMMMMMMMMWNKXWKk0NXKKkdxXMMWXKNWNXXK00OOOOOOOOO0KXXNNXXWMMMMMMMWKkONMMMMMMWXxoONMWNkclKM
+MMMMMMMMMMWKdldo:look0l,oKNX0xollc:::;;;;;;;;;;;;;::cclx0XNWMMMW0ll0WMWMMMW0oo0WMMMWW0xKM
+MMMMMMMMMMMWOc;;;;:xXNd:ldl:;,,;;:::::::::::::::::::;;;;::ldkXNOcoKWMMMMMNkldXWMMMMMW0xKM
+MMMWWMMMMMMMXx:;;:xK0xc,,,'..',:cccccccccccccccccccccc:c::;;;:c:oKMMMMMWKdlkNMMMMMMNkcoXM
+WMN00NMMMMMMW0l;;ldl;,,;::'.:o:',:cccccccccccccccccccccccccc:;,,:x0NWMNOloKWMMMMMW0ocxXMM
+kKKo;dXWMMMMMXd;,,,,;::ccc,.oK0l',:ccccccccccccccccccccccccccc::;;;lkOdlxXMMMMMMXxcoKWMMM
+lcc,..l0WWMMWKl,';::cccc:c;.:OK0o,;:cc::ccc:cccccccccccccccccccc:::;;,,lKWMMMMWOlckNMMMMM
+d;.....;kXWXx:,;::cccccccc;.;OKK0c';ccccc::cccccccccccccccccccccc:cc::,,ckXWWXxcdKWMMMMMM
+oc:;,'..'coc,,::cccccccccc;.,kKKKo..',,;;::cccccccccccccccccccccccc:cc:;,,lOkllONMMMMWNNM
+WWNXK0kd:'',;:c:cccccccccc;.;OXKOl,;,......',::::cccccccc:cccccccccccccc:;,,;oKWMMMMNkdKM
+MMMMMMW0c,;:c::ccccccccccc;.;OX0olxdcldxdol:,'''',;::::ccccccccccccccccccc:,,lKWMMWKdcxNM
+MMMMMWO:,;:ccccccccccccccc;.;OKxlxdlxKKKXXKK0kxdc;,'';:cccccccccccccccccccc:,,lKWNOclOWMW
+MMMMWO:,;:cccccccccccccccc;'l00oodlxKKKKKKKKKKKKK00o..:ccccccccccccccccccc:c:,,oOdcdXWMNO
+MMMW0c,;:cc:cccccccccccccc;.:0kcolo0KKK0O0KKKKKKKKKk,.;ccccc:ccccccccccccc:cc:,',cONMW0o:
+MMMXo,;:cccccccccccccccccc;.:OxlllOKKKKOocooox0KKKKk'.;ccccccccccccccccccccccc:,,dNWKd:cO
+MMWk;,:ccccccccccccccccccc;'lxlood0KKKKKO;.';oKKKKKx..,ccccccccccc::;;,,,,,:ccc;,:kxc:xXW
+MMXl';cccccccccccccccccccc;,llcldOKKKKKKO, ,ccd0KKXx..;ccc::;;;;;;;;:codo;.':cc:,',:dKWMM
+MWO:,:cccccccccccccccccccc,':lclkKKKKKKKd'..',',:ldc..;;;;:cclodkOO00KKK0c.,:ccc:',xNMMMN
+MNx,,:ccccccccccccccccccc:,.lkdx0XKXKKK0l..'....',;:codxkO0KKKKXXKK00Oxl;,;:cccc:,;OWMWKd
+MNo';ccccccccccccccccccc:;'cOKKKKKKOdooolcldxxkO0KKKKKXKKKKKK0Oxoc:;::;,;:cccccc:,,xNNklo
+MNl';cccccccccccccccccc:;'cOKKKK0OxdxO0KKKKKKKKKKKKKKKKK0Oxoc;,''',;::cccc:ccccc:,,oOdlkN
+MNo';ccccccccccccccccc:,,l0KKKK0xxOKKKKKKKKKKKKKKXK0Oxoc;,,,,;::cccccccccccccccc:;';cdKWM
+MNo,;:cccccccccccccc:;',d0KKKKK00KKKKKKKKKKKKKKKkoc:,,,,;::ccccccccccccccccccccc:,':ONMMM
+MWx;,:ccccccccccccc:'.,xKKKKKKKKKKKKKKKKKKKKKKkc..';::cccccccccccccccccccccccccc:,;kWMMMM
+MWO:,:ccccccccccc:;..ckKKKKKKKKKKKKKKKKKKKKOd:'..;cccccccccccccccccccccccccccccc;,c0MMMMM
+MMXl';:ccccccccc:;..l0KKKKKKKKKKKKKKKKKKKKKx;..,::cc:cccccccccccccccccccccccc:c:,':kKKXNW
+MMNk;,:c::;,'';:,'ckKKKKKKKKKKKKKKKKKKKKKKKk;.':cccc:ccccccccccccccccccccccccc:;,;collllo
+MMMXl',;,';:,'..,o0KKKKKKKKKKKKKKKKKKKKKKKKo..,ccc:c::::cc:::cccccccc:cccccccc:,,dXWNXK0O
+MMMW0:';cdkxc''ckKKKKKKKKKKKKKKKKKKKKKKXKKKk:..'''',,;::;;,,,,,;:cccccccccccc:;,lXMWMMMMM
+MMMMWk;;dO0Oo,l0XKKKKKKKKKKKKKKKKKKKKKKKKKKK0xoodddxkOOOOkkxdol:;,,:cccccccc:;,c0WMMMMMMM
+MMMMMNk::dO0kcc0KKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKXXKKKKKKKKKKXKK0ko;';::cc:c:,,l0WMMMMMMMM
+MMMMMMWOc;oO0d:d0KKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKx,.:cc:::,,lKWMMMMMMMMM
+MMMMMMMW0l;cxOockKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK0000000KKKO:.;cc:;,;xXWMMMMMMMMMM
+MMMMMMMMWXx::okooOKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKOxolc:;;;;;;;::c:,,:::,,cONMMMMMMMMMMMM
+MMMMMMMMMMWKo::lco0KKKKKKKKKKKKKKKKKKKKKKKKKKKOxl:,'',,,,;;;;;;;;;;:::;,:xXWMMMMMMMMMMMMM
+MMMMMMMMMMMMN0o:,,o0K0OOkkkkxddooooodxxkkkkxoc,'',;:ccccccccccccc:::,,:dKWMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMWKx:,::,..'',,,,,,,,,,;;;,,,,,,,;:ccccccccccccccc::;,,cxKWMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMWXkl;...;::ccccccccccccc:ccccccccccccccccccc::;,,:d0NWMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMWKko:;,;;::ccccccccccccccccccccccccc::;;,,;cdOXWMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMWXOxl:;;;;;;:::::cccccccc::::;;;;,;:cok0NWMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMWX0Oxolllcccccccccccccccclloxk0XNWWMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMWWWWNNNNNNNNNNNNNNNNWWMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM"""
 ]
     return signs[index]
-
