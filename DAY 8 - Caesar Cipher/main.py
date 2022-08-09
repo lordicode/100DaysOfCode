@@ -10,22 +10,28 @@ def caesar(text_message, shift_by, direction):
     string_for_cipher = ""
     if direction == "encode":
         for letter in text_message:
-            position = alphabet.index(letter)
-            if position + shift_by > len(alphabet):
-                new_position = (position + shift_by) % len(alphabet)
+            if letter in alphabet:
+                position = alphabet.index(letter)
+                if position + shift_by > len(alphabet):
+                    new_position = (position + shift_by) % len(alphabet)
+                else:
+                    new_position = position + shift_by
+                encrypted_letter = alphabet[new_position]
+                string_for_cipher += encrypted_letter
             else:
-                new_position = position + shift_by
-            encrypted_letter = alphabet[new_position]
-            string_for_cipher += encrypted_letter
+                string_for_cipher += letter
     elif direction == "decode":
         for letter in text_message:
-            position = alphabet.index(letter)
-            if position - shift_by < 0:
-                new_position = (position - shift_by) % len(alphabet)
+            if letter in alphabet:
+                position = alphabet.index(letter)
+                if position - shift_by < 0:
+                    new_position = (position - shift_by) % len(alphabet)
+                else:
+                    new_position = position - shift_by
+                encrypted_letter = alphabet[new_position]
+                string_for_cipher += encrypted_letter
             else:
-                new_position = position - shift_by
-            encrypted_letter = alphabet[new_position]
-            string_for_cipher += encrypted_letter
+                string_for_cipher += letter
     print(f"Resulting text is {string_for_cipher}")
 
 print(art.art)
