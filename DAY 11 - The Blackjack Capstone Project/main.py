@@ -1,10 +1,7 @@
 import os
 import secrets
-import sys
 from time import sleep
-
 from playsound import playsound
-
 import ascii_art
 
 # this keeps track of all the cards that were dealt this game
@@ -133,9 +130,6 @@ def reveal(points_dealer, points_player):
         card = ascii_art.CARDS.index(stats[1]['cards'][i])
         print(ascii_art.CARDS[card])
 
-    print(f"Dealer points: {points_dealer}")
-    print(f"Player points: {points_player}")
-
 def hit():
     print("HIT() CALLED")
     new_card = deal_card(1)
@@ -147,6 +141,8 @@ def hit():
 def black_jack(end_game):
     if end_game == 0:
         summ_points_player = count_points(1)
+        if summ_points_player == 22 and len(stats[1]['cards']) == 2:
+            summ_points_player = summ_points_player - 10
         summ_points_dealer = count_points(0)
         print(f"Current value of player cards is {summ_points_player}")
         if summ_points_player == 21:
