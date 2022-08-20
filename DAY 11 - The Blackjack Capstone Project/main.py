@@ -59,7 +59,7 @@ def count_points(player_id):
             summ_cards += 2
     return summ_cards
 
-
+#because
 def dealer_revealed():
     for i in range(0, len(stats[0]['cards'])):
         card = ascii_art.CARDS.index(stats[0]['cards'][i])
@@ -109,7 +109,7 @@ def end_blackjack_game():
         print("Draw! Blackjack!")
     elif summ_points_dealer > 21 and summ_points_player > 21:
         print("Draw! Over!")
-    elif summ_points_dealer <= 21 and summ_points_player > 21:
+    elif summ_points_dealer <= 21 < summ_points_player:
         print("Dealer won!")
     elif summ_points_player == summ_points_dealer:
         print("Draw! Under!")
@@ -130,8 +130,8 @@ def reveal(points_dealer, points_player):
         card = ascii_art.CARDS.index(stats[1]['cards'][i])
         print(ascii_art.CARDS[card])
 
+#this function generates and adds one card to player hand
 def hit():
-    print("HIT() CALLED")
     new_card = deal_card(1)
     stats[1]['cards'].append(new_card[0])
     card = stats[1]['cards'][-1]
@@ -167,30 +167,38 @@ def black_jack(end_game):
         else:
             next_card = input("Do you want another Hit? Yes or no")
             if next_card.lower().strip() == "yes":
-                hit()
                 if summ_points_dealer <= 17:
                     dealer_less_than()
+                hit()
                 black_jack(1)
             else:
                 end_blackjack_game()
     elif end_game == 1:
         summ_points_player = count_points(1)
         summ_points_dealer = count_points(0)
-        if summ_points_dealer <= 17:
-            dealer_less_than()
-        reveal(summ_points_dealer, summ_points_player)
         if summ_points_player <= 19:
+            if summ_points_dealer <= 17:
+                dealer_less_than()
+                summ_points_dealer = count_points(0)
             another_hit = input("Do you want another Hit? Yes or no")
             if another_hit.lower().strip() == 'yes':
                 hit()
+                summ_points_player = count_points(1)
                 black_jack(1)
             else:
                 if summ_points_dealer <= 17:
                     dealer_less_than()
+                    summ_points_dealer = count_points(0)
                 reveal(summ_points_dealer, summ_points_player)
                 end_blackjack_game()
+        else:
+            if summ_points_dealer <= 17:
+                dealer_less_than()
+                summ_points_dealer = count_points(0)
         if summ_points_dealer <= 17:
             dealer_less_than()
+            summ_points_dealer = count_points(0)
+        summ_points_player = count_points(1)
         reveal(summ_points_dealer, summ_points_player)
         end_blackjack_game()
 
