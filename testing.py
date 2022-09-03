@@ -1,7 +1,8 @@
-def a_function(a_parameter):
-    a_variable = 15
-    return a_parameter
+def mutate(a_list):
+  b_list = []
+  for item in a_list:
+     new_item = item * 2
+  b_list.append(new_item)
+  print(b_list)
 
-
-a_function(10)
-print(a_variable)
+mutate([1,2,3,5,8,13])
