@@ -1,9 +1,21 @@
 """This project is a knock-off version of an internet famous game Higher or Lower. You can choose in what category
 you want to play. Currently available modes: Movies, YouTube, Games (most sold, highest rating) """
+import openpyxl
+import pandas as pd
 
+def higher_lower_youtube(xslx_pd, path_to_file):
+    frame = xslx_pd.loc[xslx_pd["views"] == 100000]
+    print(frame["title"])
+
+def higher_lower_movies(xslx_pd, path_to_file):
+    frame = xslx_pd.loc[xslx_pd["views"] == 100000]
+    print(frame["title"])
+
+def higher_lower_games(xslx_pd, path_to_file):
+    frame = xslx_pd.loc[xslx_pd["views"] == 100000]
+    print(frame["title"])
 
 def game_loop(cat):
-    ""
     if cat == "YouTube":
         print("""
  .----------------.  .----------------.  .----------------.  .----------------.  .----------------.  .----------------.  .----------------. 
@@ -50,16 +62,13 @@ def game_loop(cat):
 """)
     values_to_compare = "rating"
     path = "C:\\Programming\\Public Projects versions\\Data\\" + cat + "\\" + cat + ".xlsx"
-    print(path)
-    with open(path) as xlsx_file:
-        print("Read " + path + " successfully")
 
-# TODO: Start the game with ability to choose what to play YouTube or Movies. TODO: Youtube gets displays the title
-#  and the channel and you have to pick which video got more views, only videos with more than 100 000 views are
-#  participating TODO: Movie displays the movie title and year and you have to guess with have the higher rating,
-#   equal rating means pass either way TODO: Games randomly chooses is it a round of Sold or Rating and presents a
-#    title, genre, and a year of release TODO:game continues until one mistake, then you a presented with a start
-#     over screen
+    print("Read " + path + " successfully")
+    #opem excel file with data with pandas
+    dataframe = pd.read_excel(path)
+    higher_lower_youtube(dataframe, path)
+
+
 
 print("""
  .----------------.  .----------------.  .----------------.  .----------------.  .----------------.  .----------------.   .----------------.  .----------------.   .----------------.  .----------------.  .----------------.  .----------------.  .----------------. 
