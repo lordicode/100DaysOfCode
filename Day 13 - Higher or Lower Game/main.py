@@ -4,19 +4,21 @@ import openpyxl
 import pandas as pd
 
 def higher_lower_youtube(xslx_pd, path_to_file):
-    frame = xslx_pd.loc[xslx_pd["views"] == 100000]
+    frame = xslx_pd.loc[xslx_pd["views"] == 0]
     print(frame["title"])
 
 def higher_lower_movies(xslx_pd, path_to_file):
-    frame = xslx_pd.loc[xslx_pd["views"] == 100000]
-    print(frame["title"])
+    frame = xslx_pd.loc[xslx_pd["vote_average"] == 2.2]
+    print(frame["original_title"])
 
 def higher_lower_games(xslx_pd, path_to_file):
-    frame = xslx_pd.loc[xslx_pd["views"] == 100000]
-    print(frame["title"])
+    frame = xslx_pd.loc[xslx_pd["Metrics.Review Score"] == 0]
+    print(frame["Title"])
 
 def game_loop(cat):
+    type = 0
     if cat == "YouTube":
+        type = 0
         print("""
  .----------------.  .----------------.  .----------------.  .----------------.  .----------------.  .----------------.  .----------------. 
 | .--------------. || .--------------. || .--------------. || .--------------. || .--------------. || .--------------. || .--------------. |
@@ -32,6 +34,7 @@ def game_loop(cat):
 """)
         values_to_compare = "views"
     elif cat == "Movies":
+        type = 1
         print("""
  .----------------.  .----------------.  .----------------.  .----------------.  .----------------.  .----------------. 
 | .--------------. || .--------------. || .--------------. || .--------------. || .--------------. || .--------------. |
@@ -47,6 +50,7 @@ def game_loop(cat):
 """)
         values_to_compare = "ratings"
     elif cat == "Games":
+        type = 2
         print("""
  .----------------.  .----------------.  .----------------.  .----------------.  .----------------. 
 | .--------------. || .--------------. || .--------------. || .--------------. || .--------------. |
@@ -66,7 +70,12 @@ def game_loop(cat):
     print("Read " + path + " successfully")
     #opem excel file with data with pandas
     dataframe = pd.read_excel(path)
-    higher_lower_youtube(dataframe, path)
+    if type == 0:
+        higher_lower_youtube(dataframe, path)
+    elif type == 1:
+        higher_lower_movies(dataframe, path)
+    elif type == 2:
+        higher_lower_games(dataframe, path)
 
 
 
@@ -88,10 +97,10 @@ print("Rules:\nThe game continues until you stop it or until you get one questio
 category_to_choose = int(input("Please input 0 for movies, 1 for YouTube, 2 for games."))
 chosen_category = ""
 if category_to_choose == 0:
-        chosen_category = "Movies"
+        chosen_category = "YouTube"
         print(f"Your category is {chosen_category}")
 elif category_to_choose == 1:
-        chosen_category = "YouTube"
+        chosen_category = "Movies"
         print(f"Your category is {chosen_category}")
 elif category_to_choose == 2:
         chosen_category = "Games"
