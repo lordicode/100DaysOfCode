@@ -7,6 +7,17 @@ def higher_lower_youtube(xslx_pd, path_to_file):
     frame = xslx_pd.loc[xslx_pd["views"] == 0]
     print(frame["title"])
 
+    dict_for_game = {}  # create a dictionary
+
+    # concatenate the title of the video with channel name
+    excel = excel['title'].astype(str) + " Channel: " + excel['channel_title']
+    # populate dictionary with values
+    for i in excel:
+        dict_for_game[i] = '100'
+
+    for key, value in dict_for_game.items():
+        print(key + "|\n" + value)
+
 def higher_lower_movies(xslx_pd, path_to_file):
     frame = xslx_pd.loc[xslx_pd["vote_average"] == 2.2]
     print(frame["original_title"])
@@ -14,6 +25,7 @@ def higher_lower_movies(xslx_pd, path_to_file):
 def higher_lower_games(xslx_pd, path_to_file):
     frame = xslx_pd.loc[xslx_pd["Metrics.Review Score"] == 0]
     print(frame["Title"])
+
 
 def game_loop(cat):
     type = 0
