@@ -227,12 +227,12 @@ def game_loop_movies():
             if guess == 1 and float(game_edited_choice[1][1]) > float(game_edited_choice[0][1]) or float(
                     game_edited_choice[1][1]) == float(game_edited_choice[0][1]):
                 print(
-                    f"Second game had a rating of {game_edited_choice[1][1]}, first had a rating of {game_edited_choice[0][1]}")
+                    f"Second movie had a rating of {game_edited_choice[1][1]}, first had a rating of {game_edited_choice[0][1]}")
                 print("You are correct!")
                 score += 1
             elif guess == 1 and float(game_edited_choice[1][1]) < float(game_edited_choice[0][1]):
                 print(
-                    f"Second game had a rating of {game_edited_choice[1][1]}, first had a rating of {game_edited_choice[0][1]}")
+                    f"Second movie had a rating of {game_edited_choice[1][1]}, first had a rating of {game_edited_choice[0][1]}")
                 print("You guessed incorrectly!")
                 print(f"Your final score is: {score}")
                 print("""
@@ -276,6 +276,26 @@ def game_loop_movies():
             ████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████""")
                 score = -1
 
+    game_loop()
+    go_again = input("Do you want go again? Y/N")
+    if go_again.strip().lower() == 'y':
+        game_loop()
+    else:
+        print("""
+        ███████████████████████████████
+        █░░░░░░░░░░░░░░█░░░░░░░░░░░░░░█
+        █░░▄▀▄▀▄▀▄▀▄▀░░█░░▄▀▄▀▄▀▄▀▄▀░░█
+        █░░▄▀░░░░░░░░░░█░░▄▀░░░░░░░░░░█
+        █░░▄▀░░█████████░░▄▀░░█████████
+        █░░▄▀░░█████████░░▄▀░░█████████
+        █░░▄▀░░██░░░░░░█░░▄▀░░██░░░░░░█
+        █░░▄▀░░██░░▄▀░░█░░▄▀░░██░░▄▀░░█
+        █░░▄▀░░██░░▄▀░░█░░▄▀░░██░░▄▀░░█
+        █░░▄▀░░░░░░▄▀░░█░░▄▀░░░░░░▄▀░░█
+        █░░▄▀▄▀▄▀▄▀▄▀░░█░░▄▀▄▀▄▀▄▀▄▀░░█
+        █░░░░░░░░░░░░░░█░░░░░░░░░░░░░░█
+        ███████████████████████████████""")
+        quit("\nSee you next time!")
 
 def game_loop_games():
     # parse the name of the file for the correct gamemode
@@ -383,6 +403,26 @@ def game_loop_games():
                 ████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████""")
                 score = -1
 
+    game_loop()
+    go_again = input("Do you want go again? Y/N")
+    if go_again.strip().lower() == 'y':
+        game_loop()
+    else:
+        print("""
+        ███████████████████████████████
+        █░░░░░░░░░░░░░░█░░░░░░░░░░░░░░█
+        █░░▄▀▄▀▄▀▄▀▄▀░░█░░▄▀▄▀▄▀▄▀▄▀░░█
+        █░░▄▀░░░░░░░░░░█░░▄▀░░░░░░░░░░█
+        █░░▄▀░░█████████░░▄▀░░█████████
+        █░░▄▀░░█████████░░▄▀░░█████████
+        █░░▄▀░░██░░░░░░█░░▄▀░░██░░░░░░█
+        █░░▄▀░░██░░▄▀░░█░░▄▀░░██░░▄▀░░█
+        █░░▄▀░░██░░▄▀░░█░░▄▀░░██░░▄▀░░█
+        █░░▄▀░░░░░░▄▀░░█░░▄▀░░░░░░▄▀░░█
+        █░░▄▀▄▀▄▀▄▀▄▀░░█░░▄▀▄▀▄▀▄▀▄▀░░█
+        █░░░░░░░░░░░░░░█░░░░░░░░░░░░░░█
+        ███████████████████████████████""")
+        quit("\nSee you next time!")
 
 print("""
 ████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████
