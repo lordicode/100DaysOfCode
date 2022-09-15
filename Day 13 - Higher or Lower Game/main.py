@@ -297,6 +297,7 @@ def game_loop_movies():
         ███████████████████████████████""")
         quit("\nSee you next time!")
 
+
 def game_loop_games():
     # parse the name of the file for the correct gamemode
     file = 'Games.xlsx'
@@ -310,7 +311,8 @@ def game_loop_games():
     # concatenate the title of the game + genre + publisher + release year, put symbols in between for simple splitting
     # astype makes sure the values are processed as strings
     excel = excel['Title'].astype(str) + "*&*" + excel['Metadata.Genres'].astype(str) + "*&*" + \
-            excel['Metadata.Publishers'].astype(str) + "*&*" + excel['Release.Year'].astype(str)+ "*&*" + excel['Metrics.Review Score'].astype(str)
+            excel['Metadata.Publishers'].astype(str) + "*&*" + excel['Release.Year'].astype(str) + "*&*" + excel[
+                'Metrics.Review Score'].astype(str)
     # populate list with values from dataframe
     for i in excel:
         list_for_game.append(i)
@@ -333,7 +335,8 @@ def game_loop_games():
 
             print(f"Your score is: {score}")
             print("What game has a higher rating?\n\n")
-            print(f"{game_edited_choice[0][1]} titled: " + game_edited_choice[0][0] + "\nReleased: " + game_edited_choice[0][3] + "\nBy: " + game_edited_choice[0][3])
+            print(f"{game_edited_choice[0][1]} titled: " + game_edited_choice[0][0] + "\nReleased: " +
+                  game_edited_choice[0][3] + "\nBy: " + game_edited_choice[0][3])
             print("""
                         ███████████████████████████████
                         █░░░░░░██░░░░░░█░░░░░░░░░░░░░░█
@@ -423,6 +426,7 @@ def game_loop_games():
         █░░░░░░░░░░░░░░█░░░░░░░░░░░░░░█
         ███████████████████████████████""")
         quit("\nSee you next time!")
+
 
 print("""
 ████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████
