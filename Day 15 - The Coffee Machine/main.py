@@ -60,9 +60,9 @@ MENU = {
 }
 
 resources = {
-    "water": 300,
-    "milk": 200,
-    "coffee": 100,
+    "water": 3000,
+    "milk": 2000,
+    "coffee": 1000,
     "money": 0,
 }
 
@@ -168,18 +168,31 @@ def report():
     print(f"\nThis machine currently has {water} ml of water in stock, {milk} ml of milk, and {coffee} grams of coffee\nIt holds {money_usd}$")
     print(coffee_machine_ascii)
 
+cancel = False
 print("Hello! You are standing in front of a coffee machine. It has 3 buttons for drinks. 1 button to display how much coffee, milk, and water it has in stock.\nWhat do you want to press?")
-button_pressed = int(input("0 for espresso, 1 for latte, 2 for cappuccino. Press 4 if you want to check how much in stock the machine has."))
+while cancel is False:
+    button_pressed = int(input("0 for espresso, 1 for latte, 2 for cappuccino. Press 3 if you want to check how much in stock the machine has. 9 to cancel."))
 
-if button_pressed == 0:
-    espresso()
-elif button_pressed == 1:
-    latte()
-elif button_pressed == 2:
-    cappuccino()
-elif button_pressed == 3:
-    report()
-else:
-    print("Oops, missed that button over there!")
+    if button_pressed == 0:
+        if resources["water"] < 50:
+            print("You cannot order this drink. Not enough water.")
+        else:
+            espresso()
+    elif button_pressed == 1:
+        if resources["water"] < 150 or resources["milk"] < 150:
+            print("You cannot order this drink. Not enough water or milk.")
+        else:
+            latte()
+    elif button_pressed == 2:
+        if resources["water"] < 200 or resources["milk"] < 100:
+            print("You cannot order this drink. Not enough water.")
+        else:
+            cappuccino()
+    elif button_pressed == 3:
+        report()
+    elif button_pressed == 9:
+        cancel = True
+    else:
+        print("Oops, missed that button over there!")
 
 report()
